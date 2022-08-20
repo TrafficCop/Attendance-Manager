@@ -29,9 +29,9 @@ router.post('/download', async(req, res) => {
         const jsonData = JSON.parse(JSON.stringify(r.rows));
         fastcsv.write(jsonData, {headers: true}).pipe(ws);
         */
-        await pool.query("COPY " + tblname + " TO 'C:/Users/jhung/Desktop/Web Dev/Attendance//server/files/exp.csv' DELIMITER ',' CSV HEADER;");
+        await pool.query("COPY " + tblname + " TO 'C:/Users/jhung/Desktop/Web Dev/ATTENDANCE-MANAGER/server/files/exp.csv' DELIMITER ',' CSV HEADER;");
         //const dld = '' + pth+'rst.csv';
-        res.download("C:/Users/jhung/Desktop/Web Dev/Attendance/server/files/exp.csv");
+        res.download("C:/Users/jhung/Desktop/Web Dev/ATTENDANCE-MANAGER/server/files/exp.csv");
     } catch(err) {
         console.error(err);
     }
